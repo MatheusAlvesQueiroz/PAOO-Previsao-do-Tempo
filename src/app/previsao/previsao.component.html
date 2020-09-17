@@ -1,0 +1,18 @@
+<div class="card bg-info col-md-12">
+  <div class="card-header bg-info text-center mt-2 p-1">
+    <div class="d-flex flex-row">
+      <div class="col-2">
+        <img src="https://openweathermap.org/img/wn/{{previsao.weather[0].icon}}.png">
+      </div>
+      <div class="col-10 text-light font-weight-bold">
+        <p class="mb-0">{{previsao.dt * 1000 | date:'dd/MM/y HH:mm:ss'}}</p>
+        <p class="mb-0">{{previsao.weather[0].description | titlecase }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="bg-light p-1 text-center mb-2 rounded">Temperatura máxima: {{previsao.main.temp_max}} °C</div>
+    <div class="bg-light p-1 text-center mb-2 rounded">Temperatura mínima: {{previsao.main.temp_min}} °C</div>
+    <div class="bg-light p-1 text-center mb-2 rounded">Umidade: {{previsao.main.humidity / 100 | percent:'2.1-1'}}</div>
+  </div>
+</div>
